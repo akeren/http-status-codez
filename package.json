@@ -1,0 +1,32 @@
+{
+  "name": "http-status-codez",
+  "version": "1.1.0",
+  "description": "A collection of easy access to HTTP codes status response as defined by Request for comments (RFC)",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akeren/http-status-codez.git"
+  },
+  "keywords": [
+    "http",
+    "api",
+    "node",
+    "HttpStatus",
+    "clinet",
+    "server",
+    "response",
+    "status",
+    "codes",
+    "codez"
+  ],
+  "author": "Kater Akeren",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/akeren/http-status-codez/issues",
+    "email": "akerenkater@gmail.com"
+  },
+  "homepage": "https://github.com/akeren/http-status-codez#readme"
+}
