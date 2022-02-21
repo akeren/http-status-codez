@@ -1,6 +1,6 @@
 {
   "name": "http-status-codez",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A collection of easy access to HTTP codes status response as defined by Request for comments (RFC)",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
