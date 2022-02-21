@@ -1,6 +1,6 @@
 # Http Status Codes
 
-A collection of extensive easy access and resuable HTTP status codes as defined by Request for comments (RFC).
+A collection of extensive easy access and reusable HTTP status codes as defined by Request for comments (RFC).
 
 ## Install
 
@@ -10,13 +10,15 @@ A collection of extensive easy access and resuable HTTP status codes as defined 
 
 ## Usage
 
-```javascript
-const express = require('express');
-const { Response } = require('http-status-codez');
-const User = require('./models/user');
+```typescript
+import express, { Request, Response, NextFunction } from 'express';
+import { Response } from 'http-status-codez';
+import { User } from '../models/user'
+import { catchAsync } from '../utils/catchAsync';
+
 const app = express();
 
-app.get('/api/v1/users', catchAsync(async (req, res, next) => {
+app.get('/api/v1/users', catchAsync(async (req: Request, res: Response, next:NextFunction): Promise<void> => {
   const users = await User.find();
 
   res.status(Response.HTTP_OK).json({
@@ -29,7 +31,7 @@ app.get('/api/v1/users', catchAsync(async (req, res, next) => {
 
 }));
 
-app.get('/api/v1/users/:id', catchAsync(async (req, res, next) => {
+app.get('/api/v1/users/:id', catchAsync(async (req: Request, res: Response, next:NextFunction): Promise<void> => {
   const user = await User.findById(req.params.id);
 
   if (!user) {
@@ -114,15 +116,10 @@ app.get('/api/v1/users/:id', catchAsync(async (req, res, next) => {
 | 505  | HTTP_VERSION_NOT_SUPPORTED                | HTTP Version Not Supported      |
 | 506  | HTTP_VARIANT_ALSO_NEGOTIATES_EXPERIMENTAL | Variant Also Negotiates         |
 | 507  | HTTP_INSUFFICIENT_STORAGE                 | Insufficient Storage            |
-| 508  | HTTP_LOOP_DETECTED                        | Loop Detecte                    |
+| 508  | HTTP_LOOP_DETECTED                        | Loop Detected                    |
 | 5010 | HTTP_NOT_EXTENDED                         | Not Extended                    |
 | 511  | HTTP_NETWORK_AUTHENTICATION_REQUIRED      | Network Authentication Required |
 
 ## Contributing
 
 If you discover a security vulnerability, please create an issue. All security vulnerabilities will be promptly addressed and appreciated.
-
-```shell
-    npm version [major | minor | patch]
-    npm publish
-```
