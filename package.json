@@ -1,6 +1,6 @@
 {
   "name": "http-status-codez",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A collection of easy access to HTTP codes status response as defined by Request for comments (RFC)",
   "main": "./build/index.js",
   "types": "./build/index.d.ts",
@@ -8,8 +8,14 @@
     "build/**/*"
   ],
   "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll --no-cache",
     "clean": "del ./build/*",
     "build": "npm run clean && tsc"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node"
   },
   "repository": {
     "type": "git",
@@ -35,7 +41,10 @@
   },
   "homepage": "https://github.com/akeren/http-status-codez#readme",
   "devDependencies": {
+    "@types/jest": "^27.4.0",
     "del-cli": "^4.0.1",
+    "jest": "^27.5.1",
+    "ts-jest": "^27.1.3",
     "typescript": "^4.5.5"
   }
 }
